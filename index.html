@@ -2,7 +2,7 @@
 'use strict';
 let installers=[], currentMatches=[], searchSerial=0;
 const input=document.getElementById('query'),results=document.getElementById('results'),count=document.getElementById('count'),status=document.getElementById('status'),radius=document.getElementById('radius'),country=document.getElementById('country');
-const pager=document.getElementById('pagination');let currentPage=1,lastMatches=[],lastDistances=false;const PAGE_SIZE=6;const APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbyfzBoWzTKoSuZkbSDLWEY3SafSSV2PHkUGoUSM1IgW8ahujEQGq3Smd2Z3RZZut5el/exec';
+const pager=document.getElementById('pagination');let currentPage=1,lastMatches=[],lastDistances=false;const PAGE_SIZE=6;const APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbwhPIOQ7MvGcc49R_GBsjgaGP2qFH8OvOA4XLKQeu9yqot6vzHVOnr1FnmTukYvzC_I/exec';
 const geoCache=new Map();
 try{const saved=JSON.parse(localStorage.getItem('rgb-zip-coordinates-v1')||'{}');for(const [zip,point] of Object.entries(saved)){if(point&&Number.isFinite(point.lat)&&Number.isFinite(point.lon))geoCache.set(zip,point)}}catch(e){}
 function saveGeo(){try{localStorage.setItem('rgb-zip-coordinates-v1',JSON.stringify(Object.fromEntries(geoCache)))}catch(e){}}
